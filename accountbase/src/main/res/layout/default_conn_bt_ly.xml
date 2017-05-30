@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40px">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/conn_btn_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/string_bt_phone"
+                android:textColor="#FFFFFF"
+                android:textSize="32px" />
+
+            <TextView
+                android:id="@+id/tran_tv"
+                style="@style/LoginTextStyle"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="50px"
+                android:text="@string/string_bt_tran" />
+
+            <TextView
+                style="@style/LoginTextStyle"
+                android:layout_above="@id/tran_tv"
+                android:text="@string/string_bt_good" />
+
+            <TextView
+                android:id="@+id/jump_btn"
+                style="@style/JumpBtnStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30px" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100px"
+            android:layout_marginTop="100px"
+            android:background="#33FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:paddingLeft="40px"
+            android:paddingRight="40px">
+
+            <TextView
+                android:id="@+id/bt_set"
+                style="@style/LoginTextStyle"
+                android:text="@string/string_bt_set"
+                android:textSize="32px" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_device" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/link_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/string_bt_wait" />
+
+                    <LinearLayout
+                        android:id="@+id/wave_ly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/link_mark_iv"
+                        android:layout_width="56px"
+                        android:layout_height="56px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/icon_done" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_phone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

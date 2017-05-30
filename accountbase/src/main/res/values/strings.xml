@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">AccountBase</string>
+
+    <!--sim卡文本-->
+    <string name="string_no_sim">没有检测到SIM卡，请插入！</string>
+    <string name="string_sim_done">检测到SIM卡</string>
+    <string name="string_net_check">正在检测网络环境...</string>
+    <string name="string_net_well">网络环境良好！</string>
+    <string name="string_net_error">网络环境故障！</string>
+
+    <!--登录文本-->
+    <string name="string_login_notice_txt">登录账号您就可以开启智能车旅啦</string>
+    <string name="string_login_voice">语音控制车载设备</string>
+    <string name="string_login_capture">自动抓拍行车路况</string>
+    <string name="string_login_nav">智能导航</string>
+    <string name="string_phone_name">手机号码</string>
+    <string name="string_id_code">验证码</string>
+    <string name="string_get_code">获取验证码</string>
+    <string name="string_login">确认登录</string>
+    <string name="string_saoma">扫码登录</string>
+    <string name="string_input_correct_phone">请输入正确的手机号</string>
+    <string name="string_input_correct_code">请输入验证码</string>
+
+    <!--连接手机-->
+    <string name="string_bt_phone">连接手机后可以</string>
+    <string name="string_bt_good">不用手机就可以拨打和接通电话</string>
+    <string name="string_bt_tran">蓝牙文件传输</string>
+    <string name="string_bt_set">请在手机蓝牙设置中搜索后视镜</string>
+    <string name="string_bt_wait">等待连接</string>
+    <string name="string_bt_connect">连接成功</string>
+    <string name="string_bt_name">设备名称</string>
+
+    <!--连接FM-->
+    <string name="string_how_fm">启动FM发射可以</string>
+    <string name="string_set_fm">设置FM调频</string>
+    <string name="string_fm_open">FM开启</string>
+    <string name="string_fm_link_music">音乐数据传输</string>
+    <string name="string_fm_im">后视镜/车机</string>
+    <string name="string_fm_data">数据发送到音响播放</string>
+    <string name="string_fm_look">查看中控频率</string>
+    <string name="string_fm_look_after">调节频率与汽车收音机频率一致</string>
+    <string name="string_fm_open_fm">开启FM</string>
+
+    <!--语音唤醒-->
+    <string name="string_wp_pager">语音唤醒</string>
+    <string name="string_wp_name">随时呼唤$NAME$</string>
+    <string name="string_wp_help">$NAME$帮您搞掂一切</string>
+    <string name="string_wp_test">请说“$NAME$”来唤醒我</string>
+
+    <!--引导信息-->
+    <string name="string_guide">恭喜您，完成新手引导</string>
+    <string name="string_start">开启旅程</string>
+    <string name="string_agree">点击上面的“开启旅程”按钮，即表示你同意《同行者服务条款》</string>
+
+    <string name="string_jump">跳过</string>
+</resources>

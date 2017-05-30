@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient_bg"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="40px">
+
+        <TextView
+            style="@style/PagerTitleStyle"
+            android:text="@string/string_how_fm" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:src="@drawable/icon_device" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/string_fm_open" />
+
+                <LinearLayout
+                    android:id="@+id/link_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/link_view"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/string_fm_link_music" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_sound" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/jump_btn"
+            style="@style/JumpBtnStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20px" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="125px"
+        android:layout_marginTop="125px"
+        android:background="#FFFFFF" />
+
+    <RelativeLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="40px">
+
+        <TextView
+            style="@style/PagerTitleStyle"
+            android:text="@string/string_set_fm" />
+
+        <RelativeLayout
+            android:id="@+id/ajust_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/dec_btn"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:clickable="true"
+                android:src="@drawable/selector_fm_dec" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="102.8"
+                android:textColor="#ffffff"
+                android:textSize="80px" />
+
+            <ImageView
+                android:id="@+id/inc_btn"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:src="@drawable/selector_fm_inc" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/look_fm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ajust_ly"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="27.5px"
+            android:text="@string/string_fm_look"
+            android:textSize="20px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/look_fm"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10px"
+            android:text="@string/string_fm_look_after"
+            android:textSize="20px" />
+
+        <TextView
+            android:id="@+id/open_btn"
+            style="@style/JumpBtnStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20px"
+            android:text="@string/string_fm_open_fm" />
+    </RelativeLayout>
+</LinearLayout>

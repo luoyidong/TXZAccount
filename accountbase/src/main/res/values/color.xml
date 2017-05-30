@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--文本主色调-->
+    <color name="color_text_main">#FFFFFF</color>
+    <color name="color_text_login">#FFFFFF</color>
+
+    <color name="color_btn_jump_dark">#1AFFFFFF</color>
+    <color name="color_btn_jump_light">#80FFFFFF</color>
+
+    <color name="color_error_input">#F76260</color>
+
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_sim_txt">36px</dimen>
+    <dimen name="dimen_login_item_txt">24px</dimen>
+</resources>
