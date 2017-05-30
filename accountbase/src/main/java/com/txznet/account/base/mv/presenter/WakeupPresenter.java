@@ -1,6 +1,5 @@
 package com.txznet.account.base.mv.presenter;
 
-import com.txznet.account.base.BaseContract;
 import com.txznet.account.base.OnNextObservable;
 import com.txznet.account.base.mv.contract.WakeupContract;
 

@@ -21,7 +21,6 @@ public class FmManagerImpl implements FmManager {
     @Override
     public void flushFm(float val) {
         if (isFmOpen()) {
-
         }
     }
 

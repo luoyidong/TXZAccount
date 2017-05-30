@@ -85,7 +85,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/string_bt_wait" />
+                        android:text="@string/string_bt_wait"
+                        android:textColor="#FFFFFF" />
 
                     <LinearLayout
                         android:id="@+id/wave_ly"

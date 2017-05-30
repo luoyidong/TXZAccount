@@ -1,9 +1,8 @@
-package com.txznet.account.base.ui;
+package com.txznet.account.base.ui.fragment;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.txznet.account.base.BaseFragment;
 import com.txznet.account.base.R;
 import com.txznet.account.base.mv.contract.FmContract;
 import com.txznet.account.base.mv.presenter.FmPresenter;

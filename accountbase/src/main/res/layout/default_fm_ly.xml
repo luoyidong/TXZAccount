@@ -34,7 +34,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/string_fm_open" />
+                    android:text="@string/string_fm_open"
+                    android:textColor="#FFFFFF" />
 
                 <LinearLayout
                     android:id="@+id/link_view"
@@ -50,7 +51,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/link_view"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/string_fm_link_music" />
+                    android:text="@string/string_fm_link_music"
+                    android:textColor="#FFFFFF" />
 
             </RelativeLayout>
 
@@ -124,6 +126,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="27.5px"
             android:text="@string/string_fm_look"
+            android:textColor="#FFFFFF"
             android:textSize="20px" />
 
         <TextView
@@ -133,6 +136,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="10px"
             android:text="@string/string_fm_look_after"
+            android:textColor="#FFFFFF"
             android:textSize="20px" />
 
         <TextView
@@ -141,6 +145,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20px"
-            android:text="@string/string_fm_open_fm" />
+            android:text="@string/string_fm_open_fm"
+            android:textColor="#FFFFFF" />
     </RelativeLayout>
 </LinearLayout>

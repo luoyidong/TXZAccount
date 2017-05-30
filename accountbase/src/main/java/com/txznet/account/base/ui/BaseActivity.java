@@ -1,25 +1,23 @@
-package com.txznet.account.base;
+package com.txznet.account.base.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.PersistableBundle;
-import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.txznet.account.base.ui.BluetoothFragment;
-import com.txznet.account.base.ui.FmFragment;
-import com.txznet.account.base.ui.GuideFragment;
-import com.txznet.account.base.ui.LoginFragment;
-import com.txznet.account.base.ui.SimCheckFragment;
-import com.txznet.account.base.ui.WakeupFragment;
+import com.txznet.account.base.OnNextObservable;
+import com.txznet.account.base.R;
+import com.txznet.account.base.ui.fragment.BluetoothFragment;
+import com.txznet.account.base.ui.fragment.FmFragment;
+import com.txznet.account.base.ui.fragment.GuideFragment;
+import com.txznet.account.base.ui.fragment.WakeupFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,40 +27,42 @@ public class BaseActivity extends FragmentActivity implements OnNextObservable.O
     private static final String TAG = BaseActivity.class.getSimpleName();
 
     protected int mCurrentIndex = 0;
-
     protected String[] mAllFragments;
-
     protected Fragment mCurrentFragment;
-
     protected FragmentManager mFragmentManager;
+
+    private volatile boolean exit = false;
+    protected Handler mHandler = new Handler();
+    private ArrayList<Integer> mIndexs = new ArrayList<>();
+
+    private final Runnable resetExit = new Runnable() {
+        @Override
+        public void run() {
+            exit = false;
+        }
+    };
 
     @Override
     final protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "activity onCreate");
         initBefore();
-
         setContentView(getLayoutId());
-
-        switchIndex(0);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.d(TAG, "activity onNewIntent");
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                switchIndex(0);
+            }
+        }, 200);
     }
 
     protected void initBefore() {
         OnNextObservable.GLOBAL_OBSERVABLE.registerObserver(this);
-
         mFragmentManager = getSupportFragmentManager();
         mAllFragments = getAllFragments();
-
         mCurrentIndex = 0;
     }
 
-    public int getLayoutId() {
+    private int getLayoutId() {
         return R.layout.default_main_ly;
     }
 
@@ -70,11 +70,20 @@ public class BaseActivity extends FragmentActivity implements OnNextObservable.O
         return new String[]{
                 BluetoothFragment.class.getName(),
                 FmFragment.class.getName(),
-//                LoginFragment.class.getName(),,
-//                SimCheckFragment.class.getName(),
                 WakeupFragment.class.getName(),
                 GuideFragment.class.getName()
         };
+    }
+
+    /**
+     * 添加index界面到后退栈
+     *
+     * @param index
+     */
+    public void addBackFragmentStack(int index) {
+        synchronized (mIndexs) {
+            mIndexs.add(index);
+        }
     }
 
     @Override
@@ -88,14 +97,26 @@ public class BaseActivity extends FragmentActivity implements OnNextObservable.O
             return;
         }
 
-        mCurrentIndex++;
+        addBackFragmentStack(mCurrentIndex++);
         switchIndex(mCurrentIndex);
     }
 
-    long mLastPressTime;
-
     @Override
     public void onBackPressed() {
+        synchronized (mIndexs) {
+            if (mIndexs.size() > 0) {
+                int index = mIndexs.remove(mIndexs.size() - 1);
+                switchIndex(index);
+                return;
+            }
+        }
+
+        if (!exit) {
+            exit = true;
+            Toast.makeText(BaseActivity.this, "再按一次退出程序", Toast.LENGTH_LONG).show();
+            mHandler.postDelayed(resetExit, 2000);
+            return;
+        }
         super.onBackPressed();
     }
 
@@ -110,6 +131,9 @@ public class BaseActivity extends FragmentActivity implements OnNextObservable.O
         removeAllFragment();
     }
 
+    /**
+     * 清空FragmentManager中的fragment
+     */
     private void removeAllFragment() {
         List<Fragment> fragments = mFragmentManager.getFragments();
         if (fragments != null) {
@@ -119,6 +143,11 @@ public class BaseActivity extends FragmentActivity implements OnNextObservable.O
         }
     }
 
+    /**
+     * 切换为index的界面
+     *
+     * @param index
+     */
     protected void switchIndex(int index) {
         String fragmentName = mAllFragments[index];
         if (TextUtils.isEmpty(fragmentName)) {

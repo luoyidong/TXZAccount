@@ -1,4 +1,4 @@
-package com.txznet.account.base;
+package com.txznet.account.base.ui;
 
 /**
  * Created by TXZ-METEORLUO on 2017/5/18.
