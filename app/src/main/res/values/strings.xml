@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TXZAccount</string>
+    <string name="string_wp_pager">语音唤醒</string>
+    <string name="string_wp_name">随时呼唤小度</string>
+    <string name="string_wp_help">小度帮您搞掂一切</string>
+    <string name="string_wp_test">请说“你好，小度”来唤醒我</string>
 </resources>
